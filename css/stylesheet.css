@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    background-color: #ccf2ff;
+}
+header{
+    text-align: center;
+    overflow: hidden;
+    background-color: #4dd2ff;
+    height: 90px;
+    margin-top: 0;
+}
+.welcome-header{
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+.form-action{
+    margin-top: 20px;
+    margin-left: 35%;
+}
+.input-button{
+    margin-top: 20px;
+    margin-left: 18%;
+}
+.fileToUpload{
+    margin-left: 10%;
+}
+.about{
+    margin-left: 30%;
+}
+.about-text{
+    margin-left: 7%;
+    max-width: 550px;
+}
+.border{
+    margin: 5%;
+    border: 14px solid rgba(28,110,164,0.71);
+    border-radius: 20px 20px 20px 20px;
+}
