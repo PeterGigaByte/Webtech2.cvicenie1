@@ -22,34 +22,36 @@
                     include "table.php";
                     ?>
                 </div>
-            <div class="col form">
-                <h2>Nahraj súbor</h2>
-                <form id="profileData"  enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="filename">Názov súboru</label>
-                        <input name="filename" type="text" id="filename" class="form-control" placeholder="Názov súboru">
-                    </div>
-                    <span class="choose-action">Vyberte obrázok na nahranie na server:</span>
-                    <input class="fileToUpload" type="file" name="upfile" id="upfile">
-                    <div class="input-button">
-                        <button type="button" id="submit" class="btn btn-outline-primary">Nahrať</button>
-                    </div>
-                    <div id="response">
+                <div class="col form">
+                    <h2>Nahraj súbor</h2>
+                    <form id="profileData"  enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="filename">Názov súboru <span class="required">*</span></label>
+                            <input required name="filename" type="text" id="filename" class="form-control" placeholder="Názov súboru">
+                        </div>
+                        <span class="choose-action">Vyberte obrázok na nahranie na server:</span>
+                        <input class="fileToUpload" type="file" name="upfile" id="upfile">
+                        <div class="input-button">
+                            <button type="button" id="submit" class="btn btn-outline-primary">Nahrať</button>
+                        </div>
+                        <div id="response">
 
+                        </div>
+                    </form>
+                    <div class="about">
+                        <h1>
+                            Popis:
+                        </h1>
+                        <p class="about-text">
+                            Táto stránka slúži na uploadnutie vašich súborov pre cvičenie 1 z predmetu Webtech2.
+                            Autor: <strong>Peter Rigo</strong>
+                        </p>
                     </div>
-                </form>
-                <div class="about">
-                    <h1>
-                        Popis:
-                    </h1>
-                    <p class="about-text">
-                        Táto stránka slúži na uploadnutie vašich súborov pre cvičenie 1 z predmetu Webtech2.
-                        Autor: <strong>Peter Rigo</strong>
-                    </p>
                 </div>
             </div>
         </main>
     </div>
+
     <footer class="footer">
         ©PeterRigoDevelopment
     </footer>

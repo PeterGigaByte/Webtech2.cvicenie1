@@ -1,12 +1,3 @@
-document.getElementById("0").addEventListener("click",()=>{
-    sortTable(0,"text");
-});
-document.getElementById("1").addEventListener("click",()=>{
-    sortTable(1,"number");
-});
-document.getElementById("2").addEventListener("click",()=>{
-    sortTable(2,"text");
-});
 function sortTable(n,type) {
     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0, img, header;
     table = document.getElementById("table");
@@ -28,7 +19,7 @@ function sortTable(n,type) {
             one from current row and one from the next: */
             x = rows[i].getElementsByTagName("TD")[n];
             y = rows[i + 1].getElementsByTagName("TD")[n];
-            if(type === "text") {
+            if(type === 0) {
                 /* Check if the two rows should switch place,
                 based on the direction, asc or desc: */
                 if (dir === "asc") {
@@ -45,7 +36,7 @@ function sortTable(n,type) {
                     }
                 }
             }
-            else if(type === "number"){
+            else if(type === 1){
                 x = x.innerHTML.split(" ");
                 x = x[0];
                 y = y.innerHTML.split(" ");

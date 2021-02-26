@@ -75,3 +75,16 @@ footer{
     color: white;
     text-align: center;
 }
+.required{
+    color: red;
+}
+.success{
+    font-size: 30px;
+    font-weight: 900;
+    color: green;
+}
+.failed{
+    font-size: 30px;
+    font-weight: 900;
+    color: red;
+}
