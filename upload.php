@@ -25,7 +25,7 @@ try {
     }
 
     // You should also check filesize here.
-    if ($_FILES['upfile']['size'] > 1000000) {
+    if ($_FILES['upfile']['size'] > 5000000) {
         throw new RuntimeException('Exceeded filesize limit.');
     }
 
@@ -37,8 +37,9 @@ try {
     // You should name it uniquely.
     // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
     // On this example, obtain safe unique name from its binary data.
+
     if (!move_uploaded_file(
-        $_FILES['upfile']['tmp_name'], 'files/'.$_POST['filename'] . '_' . time() . "." . $ext
+        $_FILES['upfile']['tmp_name'], 'files' . $_POST['path'] . '/'.$_POST['filename'] . '_' . time() . "." . $ext
     )) {
         throw new RuntimeException('Failed to move uploaded file.');
     }

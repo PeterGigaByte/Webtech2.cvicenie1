@@ -25,6 +25,8 @@
                 <div class="col form">
                     <h2>Nahraj súbor</h2>
                     <form id="profileData"  enctype="multipart/form-data">
+                        <label class="none" for="path"></label>
+                        <input name="path" type="text" id="path" class="none" placeholder="path">
                         <div class="form-group">
                             <label for="filename">Názov súboru <span class="required">*</span></label>
                             <input required name="filename" type="text" id="filename" class="form-control" placeholder="Názov súboru">

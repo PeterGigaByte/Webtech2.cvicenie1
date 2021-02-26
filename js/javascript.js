@@ -1,6 +1,7 @@
 const button = document.querySelector('#submit');
 let response = $("#response")
 button.addEventListener('click', () => {
+    document.getElementById("path").value = path;
     if($("#filename").val()===""){
         response.removeClass();
         response.addClass("failed");
@@ -23,8 +24,53 @@ button.addEventListener('click', () => {
             }else{
                 response.addClass("failed");
             }
-
             response.html(data.message);
-            $("#table-div").load("table.php");
+            $.post('table.php', 'val=' + path, function (response) {
+                $("#table-div").html(response);
+                changePath();
+                stepBack();
+                document.getElementById("path").value = path;
+            });
         });
+
 });
+let path = ''
+function changePath(){
+    $(".pointer").click(function () {
+        if(path === ''){
+
+            path='/'+$(this).text();
+        }else{
+            path = path+'/'+$(this).text();
+
+        }
+        console.log(path);
+        $.post('table.php', 'val='+ path , function (response) {
+            $("#table-div").html(response);
+            console.log("hh");
+            changePath();
+            stepBack();
+            document.getElementById("path").value = path;
+        });
+    });
+}
+
+function stepBack(){
+    $(".step-back").click(function () {
+        let pathSplitted =  path.split('/');
+        console.log(pathSplitted);
+        let pathBack = pathSplitted[pathSplitted.length-1];
+        console.log(pathBack);
+        path = path.replace('/'+pathBack,"");
+        console.log(path);
+        $.post('table.php', 'val=' + path, function (response) {
+            $("#table-div").html(response);
+            changePath();
+            stepBack();
+            document.getElementById("path").value = path;
+        });
+    });
+}
+stepBack();
+changePath();
+

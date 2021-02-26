@@ -51,6 +51,7 @@ table, th, td {
 .container td:first-child { color: #FB667A; }
 
 .container tr:hover {
+
     background-color: #464A52;
     -webkit-box-shadow: 0 6px 6px -6px #0E1119;
     -moz-box-shadow: 0 6px 6px -6px #0E1119;
@@ -75,6 +76,7 @@ table, th, td {
     width: 100%;
 }
 th{
+    cursor: pointer;
     position: sticky;
     top: 0;
 }

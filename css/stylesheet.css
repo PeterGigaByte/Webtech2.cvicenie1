@@ -47,6 +47,26 @@ header{
     width: 30px;
     height: auto;
 }
+.step-back{
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+}
+.step-back:hover {
+    width: 30px;
+    height: auto;
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+}
+
 .col{
     position: relative;
     min-width: 300px;
@@ -87,4 +107,36 @@ footer{
     font-size: 30px;
     font-weight: 900;
     color: red;
+}
+.pointer {
+    color: greenyellow !important;
+    cursor: pointer;
+}
+.box {
+    float: left;
+    height: 15px;
+    width: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    clear: both;
+}
+
+.red {
+    background-color: #FB667A;
+}
+
+.green {
+    background-color: greenyellow;
+}
+.legend-title{
+
+    font-weight: bold;
+    font-size: large;
+}
+.legend{
+    font-weight: bolder;
+    font-size: medium;
+}
+.none{
+    display: none;
 }
