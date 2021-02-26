@@ -1,3 +1,12 @@
+document.getElementById("0").addEventListener("click",()=>{
+    sortTable(0,"text");
+});
+document.getElementById("1").addEventListener("click",()=>{
+    sortTable(1,"number");
+});
+document.getElementById("2").addEventListener("click",()=>{
+    sortTable(2,"text");
+});
 function sortTable(n,type) {
     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0, img, header;
     table = document.getElementById("table");

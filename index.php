@@ -17,35 +17,10 @@
     <div class="container border">
         <main>
             <div class="row">
-                <div class="col table" >
-                    <h2>Uložené súbory</h2>
-                    <table class="container" id="table" style="overflow: scroll">
-                        <tr>
-                            <th id="0" onclick="sortTable(0,'text')" >Názov súboru </th>
-                            <th id="1"  onclick="sortTable(1,'number')">Veľkosť </th>
-                            <th id="2" onclick="sortTable(2,'text')">Dátum nahrania </th>
-                        </tr>
-                        <?php
-                        $directoryArray = scandir('/home/xrigo/public_html/cvicenia/cvicenie1/files', 1);
-                        $directoryArray = array_diff($directoryArray, array('.', '..'));
-                        foreach ($directoryArray as $file){
-                            $date = date_create();
-                                echo "<tr>
-                                    <td>
-                                    {$file}
-                                    </td>
-                                    <td>"
-                                    . filesize("files/" . $file)  . ' Bytes' .
-                                    "</td>
-                                    <td>"
-                                    .
-                                    date_format($date, 'U = Y-m-d H:i:s') . "\n"
-                                    ."
-                                    </td>
-                                    </tr>";
-                        }
-                        ?>
-                    </table>
+                <div id="table-div" class="col table" >
+                    <?php
+                    include "table.php";
+                    ?>
                 </div>
             <div class="col form">
                 <h2>Nahraj súbor</h2>
@@ -58,6 +33,9 @@
                     <input class="fileToUpload" type="file" name="upfile" id="upfile">
                     <div class="input-button">
                         <button type="button" id="submit" class="btn btn-outline-primary">Nahrať</button>
+                    </div>
+                    <div id="response">
+
                     </div>
                 </form>
                 <div class="about">
@@ -75,6 +53,8 @@
     <footer class="footer">
         ©PeterRigoDevelopment
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/javascript.js"></script>
     <script src="js/sortTable.js"></script>
 </body>
