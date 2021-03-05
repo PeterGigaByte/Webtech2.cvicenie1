@@ -29,6 +29,7 @@ try {
         throw new RuntimeException('Exceeded filesize limit.');
     }
 
+
     // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
     // Check MIME Type by yourself.
     $ext = pathinfo($_FILES['upfile']['name'], PATHINFO_EXTENSION);
@@ -39,7 +40,7 @@ try {
     // On this example, obtain safe unique name from its binary data.
 
     if (!move_uploaded_file(
-        $_FILES['upfile']['tmp_name'], 'files' . $_POST['path'] . '/'.$_POST['filename'] . '_' . time() . "." . $ext
+        $_FILES['upfile']['tmp_name'], 'files' . $_POST['path'] . '/'.str_replace('.', "", $_POST['filename']) . '_' . time() . "." . $ext
     )) {
         throw new RuntimeException('Failed to move uploaded file.');
     }

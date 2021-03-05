@@ -38,16 +38,12 @@ let path = ''
 function changePath(){
     $(".pointer").click(function () {
         if(path === ''){
-
             path='/'+$(this).text();
         }else{
             path = path+'/'+$(this).text();
-
         }
-        console.log(path);
         $.post('table.php', 'val='+ path , function (response) {
             $("#table-div").html(response);
-            console.log("hh");
             changePath();
             stepBack();
             document.getElementById("path").value = path;
@@ -58,11 +54,8 @@ function changePath(){
 function stepBack(){
     $(".step-back").click(function () {
         let pathSplitted =  path.split('/');
-        console.log(pathSplitted);
         let pathBack = pathSplitted[pathSplitted.length-1];
-        console.log(pathBack);
         path = path.replace('/'+pathBack,"");
-        console.log(path);
         $.post('table.php', 'val=' + path, function (response) {
             $("#table-div").html(response);
             changePath();

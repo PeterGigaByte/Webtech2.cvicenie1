@@ -140,3 +140,28 @@ footer{
 .none{
     display: none;
 }
+.pointer_file{
+    cursor: pointer;
+}
+/* unvisited link */
+.link:link {
+    color: #FB667A;
+}
+
+/* visited link */
+.link:visited {
+    color: #FB667A;
+}
+
+/* mouse over link */
+.link:hover {
+    color: black;
+}
+
+/* selected link */
+.link:active {
+    color: blue;
+}
+.pointer-directory:hover{
+    color: black;
+}
